@@ -73,7 +73,7 @@ nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 
-nnoremap <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
-nnoremap <leader>rr :YcmCompleter RefactorRename<space>
+nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
+nnoremap <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <silent> <leader>rr :YcmCompleter RefactorRename<space>
 
