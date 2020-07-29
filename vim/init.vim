@@ -20,6 +20,7 @@ set undofile
 set incsearch
 set termguicolors
 set scrolloff=8
+set noshowmode
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -43,14 +44,16 @@ Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'jremmen/vim-ripgrep'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
 colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 
 if executable('rg')
@@ -96,6 +99,7 @@ inoremap <silent><expr> <TAB>
 
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <C-space> coc#refresh()
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " GoTo code navigation.
 nmap <leader>gd <Plug>(coc-definition)
@@ -114,6 +118,11 @@ nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 nmap <leader>gs :G<CR>
 
+" Coc prettier
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
@@ -121,4 +130,5 @@ fun! TrimWhitespace()
 endfun
 
 autocmd BufWritePre * :call TrimWhitespace()
-
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.tsx,*.ts,*.js,*.jsx,*.yml,*.yaml,*.json setlocal tabstop=2 softtabstop=2 shiftwidth=2
