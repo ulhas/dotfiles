@@ -115,6 +115,9 @@ ctrl + alt - 4 : yabai -m space --focus 4
 ctrl + alt - 5 : yabai -m space --focus 5
 ctrl + alt - 6 : yabai -m space --focus 6
 ctrl + alt - 7 : yabai -m space --focus 7
+ctrl + alt - 8 : yabai -m space --focus 8
+ctrl + alt - 9 : yabai -m space --focus 9
+ctrl + alt - 0 : yabai -m space --focus 10
 
 # send window to desktop and follow focus
 # shift + cmd - z : yabai -m window --space next; yabai -m space --focus next
