@@ -49,6 +49,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'jremmen/vim-ripgrep'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'tpope/vim-commentary'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -67,6 +68,7 @@ let g:netrw_browse_split = 2
 let g:vrfr_rg = 'true'
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
+let g:user_emmet_install_global = 0
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -132,3 +134,4 @@ endfun
 autocmd BufWritePre * :call TrimWhitespace()
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 autocmd BufNewFile,BufRead *.tsx,*.ts,*.js,*.jsx,*.yml,*.yaml,*.json setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType html,css EmmetInstall
