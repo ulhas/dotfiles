@@ -29,3 +29,7 @@ cp vim/coc-settings.json ~/.config/nvim/coc-settings.json
 # Copy zshrc
 cp zshrc/.zshrc ~/.zshrc
 
+# Git config
+git config --global user.name "Ulhas Mandrawadkar"
+git config --global user.email "ulhas.sm@gmail.com"
+git config --global pull.rebase false
