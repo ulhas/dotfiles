@@ -1,7 +1,5 @@
 # Ulhas's dotfiles :rocket:
 
----
-
 These dotfiles have my settings for
 
 1. nvim
