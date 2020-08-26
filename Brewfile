@@ -41,6 +41,7 @@ brew 'yarn'
 brew 'fastlane'
 
 # Apps
+cask 'android-studio'
 cask 'dashlane'
 cask 'discord'
 cask 'docker'
