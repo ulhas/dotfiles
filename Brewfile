@@ -22,6 +22,7 @@ brew 'koekeishiya/formulae/yabai'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'nvim'
+brew 'ripgrep'
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
 brew 'vim'
@@ -69,9 +70,6 @@ cask 'qlstephen'
 # Fonts
 cask 'font-fira-code'
 cask 'font-lato'
-cask 'font-open-sans'
-cask 'font-roboto'
-cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
@@ -84,3 +82,4 @@ mas 'Keynote', id: 409183694
 mas 'MuteMyMic', id: 456362093
 mas 'Numbers', id: 409203825
 mas 'UTC Bar', id: 525372278
+mas 'Xcode', id: 497799835
