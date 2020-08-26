@@ -8,6 +8,7 @@ tap 'homebrew/bundle'
 brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'bat' # "cat" on steroids
+brew 'cocoapods'
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'ffmpeg'
 brew 'fzf'
