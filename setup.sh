@@ -33,3 +33,4 @@ cp zshrc/.zshrc ~/.zshrc
 git config --global user.name "Ulhas Mandrawadkar"
 git config --global user.email "ulhas.sm@gmail.com"
 git config --global pull.rebase false
+git config --global core.editor "nvim"
