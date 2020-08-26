@@ -20,33 +20,49 @@ antigen theme robbyrussell
 antigen apply
 
 # User configuration
-
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# Android
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-export WORKON_HOME=~/.envs
+
+# Yarn
 export PATH="$PATH:`yarn global bin`"
+
+# Virtual env wrapper
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export WORKON_HOME=~/.envs
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
-export PATH="$HOME/.fastlane/bin:$PATH"
-export EDITOR=vim
+
+# Editor
+export EDITOR=nvim
 export TERM=xterm-256color
+
+# Go
 export GOPATH=$HOME/Workspace/GoLang
 export GOBIN=$HOME/Workspace/GoLang/bin
+
+# Postgres
 export PGDATA=/usr/local/var/postgres
+
+# Ruby
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# Fastlane
+export PATH="$HOME/.fastlane/bin:$PATH"
 export PATH=/usr/local/bin/fastlane:/usr/local/opt/ruby/bin:/usr/local/bin:/usr/local/bin:/usr/local/opt/ruby/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ulhas/.rvm/bin:/Users/ulhas/.rvm/bin
 
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
