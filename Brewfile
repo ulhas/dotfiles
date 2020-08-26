@@ -58,7 +58,6 @@ cask 'the-unarchiver'
 cask 'visual-studio-code'
 cask 'whatsapp'
 cask 'zoom'
-cask 'xcode'
 
 # Quicklook
 cask 'qlcolorcode'
