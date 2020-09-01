@@ -23,6 +23,7 @@ brew 'koekeishiya/formulae/yabai'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'nvim'
+brew 'prettier'
 brew 'ripgrep'
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
