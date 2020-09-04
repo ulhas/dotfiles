@@ -87,5 +87,6 @@ mas 'Giphy Capture', id: 668208984
 mas 'Keynote', id: 409183694
 mas 'MuteMyMic', id: 456362093
 mas 'Numbers', id: 409203825
+mas 'Spark', id: 1176895641
 mas 'UTC Bar', id: 525372278
 mas 'Xcode', id: 497799835
