@@ -27,7 +27,7 @@ cp vim/init.vim ~/.config/nvim/init.vim
 cp vim/coc-settings.json ~/.config/nvim/coc-settings.json
 
 # Copy zshrc
-cp zshrc/.zshrc ~/.zshrc
+cp zsh/.zshrc ~/.zshrc
 
 # Git config
 git config --global user.name "Ulhas Mandrawadkar"
