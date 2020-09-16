@@ -23,6 +23,7 @@ brew 'koekeishiya/formulae/yabai'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'nvim'
+brew 'postgres'
 brew 'prettier'
 brew 'ripgrep'
 brew 'trash' # Manage the Trash bin
