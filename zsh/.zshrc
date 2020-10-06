@@ -74,3 +74,4 @@ export PATH=/usr/local/bin/fastlane:/usr/local/opt/ruby/bin:/usr/local/bin:/usr/
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
+eval "$(starship init zsh)"

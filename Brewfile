@@ -27,9 +27,11 @@ brew 'nvim'
 brew 'postgres'
 brew 'prettier'
 brew 'ripgrep'
+brew 'starship'
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
 brew 'vim'
+brew 'z'
 
 # Spatie Medialibrary
 brew 'jpegoptim'
