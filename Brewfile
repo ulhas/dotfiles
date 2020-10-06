@@ -20,6 +20,7 @@ brew 'httpie'
 brew 'hub'
 brew 'koekeishiya/formulae/skhd'
 brew 'koekeishiya/formulae/yabai'
+brew 'kubernetes-cli'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'nvim'
