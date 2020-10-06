@@ -9,8 +9,9 @@ brew tap Homebrew/bundle
 # Install Brewfile
 brew bundle
 
-# Install antigen
-curl -L git.io/antigen > antigen.zsh
+# Fish
+cp fish/config.fish ~/.config/fish/config.fish
+curl -L https://get.oh-my.fish | fish
 
 # Install vim plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -25,9 +26,6 @@ cp vim/.vimrc ~/.vimrc
 mkdir ~/.config/nvim
 cp vim/init.vim ~/.config/nvim/init.vim
 cp vim/coc-settings.json ~/.config/nvim/coc-settings.json
-
-# Copy zshrc
-cp zsh/.zshrc ~/.zshrc
 
 # Git config
 git config --global user.name "Ulhas Mandrawadkar"

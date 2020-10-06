@@ -8,5 +8,5 @@ cp ~/.skhdrc yabai/.skhdrc
 cp ~/.config/nvim/init.vim vim/init.vim
 cp ~/.config/nvim/coc-settings.json vim/coc-settings.json
 
-# zsh
-cp ~/.zshrc zsh/.zshrc
+# fish
+cp ~/.config/fish/config.fish fish/config.fish
