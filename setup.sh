@@ -10,8 +10,10 @@ brew tap Homebrew/bundle
 brew bundle
 
 # Fish
+mkdir ~/.config/fish
 cp fish/config.fish ~/.config/fish/config.fish
 curl -L https://get.oh-my.fish | fish
+omf install https://github.com/dracula/fish
 
 # Install vim plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
