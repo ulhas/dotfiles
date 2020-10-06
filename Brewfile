@@ -10,24 +10,33 @@ brew 'bash' # Latest Bash version
 brew 'bat' # "cat" on steroids
 brew 'cocoapods'
 brew 'coreutils' # Those that come with macOS are outdated
+brew 'ctop'
+brew 'exa'
+brew 'fd'
 brew 'ffmpeg'
 brew 'fzf'
 brew 'gh'
 brew 'git'
+brew 'glances'
 brew 'gnupg2'
 brew 'grep'
 brew 'httpie'
+brew 'htop'
 brew 'hub'
 brew 'koekeishiya/formulae/skhd'
 brew 'koekeishiya/formulae/yabai'
 brew 'kubernetes-cli'
+brew 'lazydocker'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
+brew 'ncdu'
 brew 'nvim'
 brew 'postgres'
+brew 'pgcli'
 brew 'prettier'
 brew 'ripgrep'
 brew 'starship'
+brew 'tldr'
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
 brew 'vim'
