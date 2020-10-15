@@ -39,6 +39,7 @@ brew 'ripgrep'
 brew 'starship'
 brew 'tldr'
 brew 'trash' # Manage the Trash bin
+brew 'typescript'
 brew 'tree' # List directories in a tree structure
 brew 'vim'
 brew 'z'
