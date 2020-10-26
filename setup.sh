@@ -23,6 +23,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Copy yabairc
 cp yabai/.yabairc ~/.yabairc
 cp yabai/.skhdrc ~/.skhdrc
+sudo yabai --install-sa
 
 # Copy vimrc
 cp vim/.vimrc ~/.vimrc
