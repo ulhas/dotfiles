@@ -13,6 +13,7 @@ brew bundle
 mkdir ~/.config/fish
 cp fish/config.fish ~/.config/fish/config.fish
 curl -L https://get.oh-my.fish | fish
+fish
 omf install https://github.com/dracula/fish
 
 # Install vim plug
@@ -34,3 +35,6 @@ git config --global user.name "Ulhas Mandrawadkar"
 git config --global user.email "ulhas.sm@gmail.com"
 git config --global pull.rebase false
 git config --global core.editor "nvim"
+
+pip3 install black
+pip3 install neovim
