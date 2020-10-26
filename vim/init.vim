@@ -51,6 +51,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'tpope/vim-commentary'
 Plug 'mattn/emmet-vim'
+Plug 'psf/black'
 
 call plug#end()
 
@@ -136,3 +137,4 @@ autocmd BufWritePre * :call TrimWhitespace()
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 autocmd BufNewFile,BufRead *.tsx,*.ts,*.js,*.jsx,*.yml,*.yaml,*.json setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType html,css EmmetInstall
+autocmd BufWritePre *.py execute ':Black'
