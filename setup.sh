@@ -29,7 +29,6 @@ sudo yabai --install-sa
 cp vim/.vimrc ~/.vimrc
 mkdir ~/.config/nvim
 cp vim/init.vim ~/.config/nvim/init.vim
-cp vim/coc-settings.json ~/.config/nvim/coc-settings.json
 
 # Git config
 git config --global user.name "Ulhas Mandrawadkar"

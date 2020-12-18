@@ -1,140 +1,101 @@
 syntax on
+filetype plugin indent on
 
-set guicursor=
-set noshowmatch
-set relativenumber
-set nohlsearch
-set hidden
-set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-set nu
-set nowrap
-set smartcase
-set noswapfile
-set nobackup
-set undodir=~/.vim/undodir
-set undofile
-set incsearch
-set termguicolors
-set scrolloff=8
-set noshowmode
-set autoread
+set noerrorbells  " No error bells when you go to the end of your line
+set number  " Show line number
+set relativenumber  " Show relative line number
+set nohlsearch  " Stops highligting search. Not very clear what this does
+set hidden  " Does not unload a buffer when abandoned
+set tabstop=4 softtabstop=4  " Tab is not 4 spaces
+set shiftwidth=4  " Shifts by 4 spaces
+set expandtab  " Expand tabs to space
+set smartindent  " Duh
+set guicursor=  " Cursor in all mode is now same
+set termguicolors  " Better color
+set smartcase  " Smart case
+set smartindent  " Adds auto indent
+set noswapfile  " Does not create swp file
+set completeopt=menuone,noinsert,noselect  " This is for stopping to auto populate completion box
+set nowrap  " Doesn't wrap
 
-" Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=2  " Sets the command height to 2 row
+set updatetime=50  " Not sure if we need this since we are not using swp file
+set colorcolumn=80  " Sets the gutter at column 80
 
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=50
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+let mapleader = " "
 
 call plug#begin('~/.vim/plugged')
 
+" color scheme
 Plug 'gruvbox-community/gruvbox'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-fugitive'
-Plug 'vim-utils/vim-man'
-Plug 'mbbill/undotree'
+
+" auto pair
+Plug 'jiangmiao/auto-pairs'
+
+" fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'leafgarland/typescript-vim'
+
+" nvim lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+
+" formatters
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+" airline
 Plug 'vim-airline/vim-airline'
-Plug 'jremmen/vim-ripgrep'
-Plug 'peitalin/vim-jsx-typescript'
+
+" git
+Plug 'tpope/vim-fugitive'
+
+" commenting
 Plug 'tpope/vim-commentary'
-Plug 'mattn/emmet-vim'
-Plug 'psf/black'
 
 call plug#end()
 
+" colorscheme
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
+" fzf mappings
+nmap <c-p> :GFiles<cr>
+nmap <leader>pf :Files<cr>
+nmap <leader>ps :Rg<space>
 
-let loaded_matchparen = 1
-let mapleader = " "
+" clipboard mappings
+nnoremap <leader>y "+y
 
-let g:netrw_browse_split = 2
-let g:vrfr_rg = 'true'
-let g:netrw_banner = 0
-let g:netrw_winsize = 25
-let g:user_emmet_install_global = 0
+" window movement map
+nmap <leader>h :wincmd h<cr>
+nmap <leader>j :wincmd j<cr>
+nmap <leader>k :wincmd k<cr>
+nmap <leader>l :wincmd l<cr>
 
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-nnoremap <Leader>ps :Rg<SPACE>
-nnoremap <C-p> :GFiles<CR>
-nnoremap <Leader>pf :Files<CR>
-nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <Leader>+ :vertical resize +5<CR>
-nnoremap <Leader>- :vertical resize -5<CR>
-nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kkI<esc>
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-nnoremap <leader>vwm :colorscheme gruvbox<bar>:set background=dark<CR>
-vnoremap X "_d
-inoremap <C-c> <esc>
+" refresh vim config
+nmap <leader><cr> :so ~/.config/nvim/init.vim<cr>
 
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" nvim lsp setup
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
+lua require'lspconfig'.pyls.setup{ on_attach=require'completion'.on_attach }
 
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
+" nvim lsp mapping
+nmap <leader>vD :lua vim.lsp.buf.declaration()<cr>
+nmap <leader>vd :lua vim.lsp.buf.definition()<cr>
+nmap <leader>vi :lua vim.lsp.buf.implementation()<cr>
+nmap <leader>vsh :lua vim.lsp.buf.signature_help()<cr>
+nmap <leader>vrr :lua vim.lsp.buf.references()<cr>
+nmap <leader>vrn :lua vim.lsp.buf.rename()<cr>
+nmap <leader>vh :lua vim.lsp.buf.hover()<cr>
+nmap <leader>vca :lua vim.lsp.buf.code_action()<cr>
+nmap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics()<cr>
 
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <silent><expr> <C-space> coc#refresh()
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" prettier
+let g:prettier#quickfix_enabled = 0
+autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-" GoTo code navigation.
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gy <Plug>(coc-type-definition)
-nmap <leader>gi <Plug>(coc-implementation)
-nmap <leader>gr <Plug>(coc-references)
-nmap <leader>rr <Plug>(coc-rename)
-nmap <leader>g[ <Plug>(coc-diagnostic-prev)
-nmap <leader>g] <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>gn <Plug>(coc-diagnostic-next)
-nnoremap <leader>cr :CocRestart
-
-" Sweet Sweet FuGITive
-nmap <leader>gj :diffget //3<CR>
-nmap <leader>gf :diffget //2<CR>
-nmap <leader>gs :G<CR>
-
-" Coc prettier
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
-
-autocmd BufWritePre * :call TrimWhitespace()
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-autocmd BufNewFile,BufRead *.tsx,*.ts,*.js,*.jsx,*.yml,*.yaml,*.json setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType html,css EmmetInstall
-autocmd BufWritePre *.py execute ':Black'
+" git
+nmap <leader>gs :G<cr>
+nmap <leader>gd :Git diff<cr>
