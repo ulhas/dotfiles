@@ -5,7 +5,7 @@ cp ~/.yabairc yabai/.yabairc
 cp ~/.skhdrc yabai/.skhdrc
 
 # vim
-cp ~/.config/nvim/init.vim vim/init.vim
+cp ~/.config/nvim/init.vim vim/nvim/init.vim
 cp -R ~/.config/nvim/lua vim/lua
 
 # fish
