@@ -5,9 +5,8 @@ cp yabai/.yabairc ~/.yabairc
 cp yabai/.skhdrc ~/.skhdrc
 
 # vim
-cp vim/.vimrc ~/.vimrc
 cp vim/init.vim ~/.config/nvim/init.vim
-cp vim/coc-settings.json ~/.config/nvim/coc-settings.json
+cp -R vim/lua ~/.config/nvim
 
 # fish
 cp fish/config.fish ~/.config/fish/config.fish

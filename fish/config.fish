@@ -17,9 +17,20 @@ export CPPFLAGS="-I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH=/usr/local/bin/fastlane:/usr/local/opt/ruby/bin:/usr/local/bin:/usr/local/bin:/usr/local/opt/ruby/bin:/usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ulhas/.rvm/bin:/Users/ulhas/.rvm/bin
+export JAVA_HOME=/usr
 
 starship init fish | source
 
 # tabtab source for packages
 # uninstall by removing these lines
 [ -f ~/.config/tabtab/__tabtab.fish ]; and . ~/.config/tabtab/__tabtab.fish; or true
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /Users/ulhas/Workspace/procedure/treebo/cybertron/cybertron-junkyard/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/ulhas/Workspace/procedure/treebo/cybertron/cybertron-junkyard/node_modules/tabtab/.completions/serverless.fish
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /Users/ulhas/Workspace/procedure/treebo/cybertron/cybertron-junkyard/node_modules/tabtab/.completions/sls.fish ]; and . /Users/ulhas/Workspace/procedure/treebo/cybertron/cybertron-junkyard/node_modules/tabtab/.completions/sls.fish
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /Users/ulhas/Workspace/procedure/treebo/cybertron/cybertron-junkyard/node_modules/tabtab/.completions/slss.fish ]; and . /Users/ulhas/Workspace/procedure/treebo/cybertron/cybertron-junkyard/node_modules/tabtab/.completions/slss.fish
