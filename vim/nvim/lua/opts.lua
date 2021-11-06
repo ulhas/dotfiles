@@ -38,3 +38,4 @@ vim.g.gruvbox_contrast_dark = 'hard'
 vim.g.airline_theme = 'base16_gruvbox_dark_hard'
 
 vim.api.nvim_command('autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync')
+vim.api.nvim_command('autocmd FileType go setlocal omnifunc=v:lua.vim.lsp.omnifunc')
